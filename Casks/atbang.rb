@@ -1,6 +1,6 @@
 cask "atbang" do
-  version "1.0.0"
-  sha256 "1186d1f11440181a3f70fce126128dfb68e34c9c279262582e8a8770508f13c6"
+  version "1.0.1"
+  sha256 "368713100239324fa239e637f8cbd6031a0c2eb4acf247850c654f19d9871d37"
 
   url "https://github.com/alexandre-daubois/atbang/releases/download/v#{version}/Atbang-#{version}.zip"
   name "Atbang"
