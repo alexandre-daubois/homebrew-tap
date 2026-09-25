@@ -1,6 +1,6 @@
 cask "atbang" do
-  version "1.0.1"
-  sha256 "368713100239324fa239e637f8cbd6031a0c2eb4acf247850c654f19d9871d37"
+  version "1.0.2"
+  sha256 "9f2f0a9e08c4169772cd3fb0e26a3e27f4368d28c4b8456a99e32d92a71cf181"
 
   url "https://github.com/alexandre-daubois/atbang/releases/download/v#{version}/Atbang-#{version}.zip"
   name "Atbang"
@@ -11,15 +11,6 @@ cask "atbang" do
   depends_on macos: :tahoe
 
   app "Atbang.app"
-
-  # The app is signed ad hoc and not notarized, so Gatekeeper refuses to open it while it is quarantined.
-  postflight_steps do
-    run "/usr/bin/xattr",
-        args:           ["-dr", "com.apple.quarantine", "{{appdir}}/Atbang.app"],
-        must_succeed:   false,
-        writable_paths: ["Atbang.app"],
-        writable_base:  :appdir
-  end
 
   zap trash: [
     "~/Library/Caches/Atbang",
